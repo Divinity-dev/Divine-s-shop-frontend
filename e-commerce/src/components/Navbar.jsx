@@ -4,7 +4,12 @@ import './Navbar.css'
 const Navbar = () => {
   return (
     <div className='container'>
-      Navabar
+        <div className='wrapper'>
+           <div className='left'>left</div>
+           <div className='center'>center</div>
+           <div className='right'>right</div>
+        </div>
+      
     </div>
   )
 }
