@@ -1,3 +1,7 @@
+*{
+    margin-top: 0;
+}
+
 .container{
     height: 60px;
     
@@ -7,23 +11,29 @@
     padding: 10px 20px;
     display: flex;
     justify-content: space-between;
+    margin-top: 0;
+    padding: 0;
 }
 
 .left{
     flex: 1;
     display: flex;
     align-items: center;
+    margin-top: 0;
+    padding-top: 0;
 }
 
 .center{
     flex: 1;
+    display: flex;
+    align-items: center;
 }
 
 .right{
     flex: 1;
 }
 
-span{
+.en{
     font-size: 14px;
     cursor: pointer;
 }
@@ -35,4 +45,10 @@ span{
 
 .search input{
     border: none;
+}
+
+.shop{
+    font-weight: bold;
+    text-align: center;
+    margin-top: 10px;
 }

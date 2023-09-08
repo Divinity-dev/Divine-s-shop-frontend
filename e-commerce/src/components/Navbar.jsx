@@ -6,15 +6,14 @@ const Navbar = () => {
     <div className='container'>
         <div className='wrapper'>
            <div className='left'>
-            <span>EN</span>
+            <span className='en'>EN</span>
             <div className='search'>
             <input />
             <ion-icon name="search-outline"></ion-icon>
             </div>
-            
             </div>
            <div className='center'>
-              center
+           <h1 className='shop'>Divine's shop</h1>
            </div>
            <div className='right'>right</div>
         </div>
