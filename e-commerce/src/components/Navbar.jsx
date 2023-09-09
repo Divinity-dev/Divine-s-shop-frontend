@@ -15,7 +15,11 @@ const Navbar = () => {
            <div className='center'>
            <h1 className='shop'>Divine's shop</h1>
            </div>
-           <div className='right'>right</div>
+           <div className='right'>
+            <div className='menuItem'>register</div>
+            <div className='menuItem'>sign in</div>
+            <div className='menuItem'><ion-icon name="cart-outline"></ion-icon></div>
+           </div>
         </div>
       
     </div>
