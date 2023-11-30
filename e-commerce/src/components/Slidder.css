@@ -1,11 +1,4 @@
-.arrows{
-    width: 100%;
-    height: 100vh;
-    display: flex;
-    background-color: coral;
-    margin-top: 0;
-    position: relative;
-}
+
 
 .back ion-icon{
     position: absolute;
@@ -25,4 +18,53 @@
     position: absolute;
     right: 10px;
     top: 50%;
+}
+
+.slidder-item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 30px;
+    width: calc(100vw - 60px); /* Consider padding in the width calculation */
+  }
+  
+
+.slidder-img{
+    display: flex;
+    flex: 1;
+    height: 80vh;
+    justify-content: flex-end;
+    padding-left: 200px;
+}
+
+.slidder-desc{
+    flex: 1;
+    padding: 70px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    
+}
+
+.slidder-desc h1{
+    font-size: 50px;
+}
+
+.slidder-desc p{
+    font-size: 20px;
+    font-weight: 500;
+    margin: 50px 0px;
+    letter-spacing: 3px;
+}
+
+.slidder-desc button{
+    padding: 10px;
+    font-size: 20px;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+.items{
+    display: flex;
+    width: 100vw;
 }
