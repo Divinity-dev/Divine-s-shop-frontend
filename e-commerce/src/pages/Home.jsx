@@ -1,9 +1,15 @@
 import React from 'react'
 import Navbar from '../components/Navbar'
+import Announcement from '../components/Announcement'
+import Slidder from '../components/Slidder'
 
 const Home = () => {
   return (
-   <Navbar />
+    <>
+    <Announcement />
+    <Navbar />
+    <Slidder />
+    </>
   )
 }
 
