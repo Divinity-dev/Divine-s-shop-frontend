@@ -1,0 +1,44 @@
+.category-items{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    width: 100%;
+    margin: 3px;
+    position: relative;
+}
+
+.category-items img{
+    height: 70vh;
+    width: 100%;
+    object-fit: cover;
+}
+
+.category-desc{
+    display: flex;
+    position: absolute;
+    width: 100%;
+    flex-direction: column;
+    left: 0;
+    margin: 0;
+    justify-content: center;
+    align-items: center;
+}
+
+.category-desc h2{
+    color: white;
+}
+
+.category-desc button{
+    padding: 10px;
+    color: gray;
+    background-color: white;
+    cursor: pointer;
+    border: none;
+}
+
+.category-items img:hover{
+  transform: scale(1.05);
+  transition: all 1.5s ease;
+}
+
