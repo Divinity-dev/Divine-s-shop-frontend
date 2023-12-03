@@ -8,7 +8,7 @@ const Categories = () => {
     <div className='items'>
       {
         categories.map((item)=>(
-            <CategoryItems items = {item}/>
+            <CategoryItems items = {item} key={item.id}/>
         ))
       }
     </div>

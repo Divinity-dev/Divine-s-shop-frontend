@@ -3,6 +3,7 @@ import Navbar from '../components/Navbar'
 import Announcement from '../components/Announcement'
 import Slidder from '../components/Slidder'
 import Categories from '../components/Categories'
+import Products from '../components/Products'
 
 const Home = () => {
   return (
@@ -11,6 +12,7 @@ const Home = () => {
     <Navbar />
     <Slidder />
     <Categories />
+    <Products />
     </>
   )
 }
