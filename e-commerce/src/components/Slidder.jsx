@@ -23,7 +23,7 @@ const Slidder = () => {
         <div className='forward'>
           <ion-icon name="arrow-forward-circle-outline" onClick= {()=>handleclick("arrow-forward-circle-outline")}></ion-icon>
         </div> 
-      <div className='slidder-item' bg = {sliderItems[index].bg} key={sliderItems[index].id}>
+      <div className='slidder-item' style={{ backgroundColor: `#${sliderItems[index].bg}` }} key={sliderItems[index].id}>
         <img src={sliderItems[index].img} alt="" className='slidder-img' />
         <div className='slidder-desc'>
           <h1>{sliderItems[index].title}</h1>
