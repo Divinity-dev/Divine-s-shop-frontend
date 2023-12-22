@@ -19,6 +19,7 @@
     .info {
         opacity: 1;
     } 
+    transition: 1s ease;
 }
 
 .info{

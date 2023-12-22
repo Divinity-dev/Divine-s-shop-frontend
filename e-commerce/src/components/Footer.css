@@ -1,0 +1,113 @@
+.footer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.lefty{
+    flex: 1;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: left;
+}
+
+.icons{
+    display: flex;
+    justify-content: left;
+    align-items: center;
+}
+
+.socials{
+    margin-left: 10px;
+    width:30px;
+    height: 30px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.socials1{
+    background-color: #3b5998;
+}
+
+.shop{
+    text-align: left;
+}
+
+.centy{
+    flex: 1;
+}
+
+.righty{
+    flex: 1;
+}
+
+.righty img{
+    width: 50%;
+    height: auto;
+}
+
+
+.centy{
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+}
+
+.centy ul{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    list-style: none;
+}
+
+.centy h2{
+    margin-left: 40px;
+}
+
+.righty{
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+}
+
+.details{
+    display: flex;
+    align-items: center;
+    justify-content: left;
+}
+
+.details h3{
+    font-size: 15px;
+   
+    margin-left: 10px;
+}
+
+.righty h2{
+    margin-top: 20px;
+}
+
+.socials ion-icon{
+    
+    color:white;
+}
+
+.socials2{
+    background-color: #c32aa3;
+}
+
+.socials3{
+    background-color: #1da1f2;
+}
+
+.socials4{
+    background-color: #bd081c;
+}
+
+
+  
+ 
+  
