@@ -1,0 +1,34 @@
+.Newsletter{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.heading{
+    font-size: 70px;
+}
+
+.Newsletter p{
+    font-size: 24px;
+}
+
+.input{
+    width: 50%;
+    height: 48px;
+    border:1px solid;
+    display: flex;
+    padding-left: 10px;
+}
+
+.input input{
+    border:none;
+    flex:8;
+}
+
+.input button{
+    flex:1;
+    color:white;
+    background-color: teal;
+    border:none;
+}
