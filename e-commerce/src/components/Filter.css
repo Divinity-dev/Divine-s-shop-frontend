@@ -1,0 +1,10 @@
+.filter{
+    display: flex;
+    justify-content: space-between;
+   margin-right: 10px;
+}
+
+.filterchildren select{
+    margin-left: 10px;
+    padding: 10px;
+}
