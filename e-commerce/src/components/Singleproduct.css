@@ -21,3 +21,43 @@
     height: 90vh;
     object-fit: cover;
 }
+
+.select{
+    display: flex;
+    width: 50%;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.color{
+    display: flex;
+}
+
+.color span{
+    font-size: 20px;
+    font-weight: 200;
+}
+
+.div{
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    margin-left: 10px;
+    cursor: pointer;
+}
+
+.div1{
+    background-color: black;
+}
+
+.div2{
+    background-color: blue;
+}
+
+.div3{
+    background-color: gray;
+}
+
+.size{
+    padding: 5px;
+}
