@@ -61,3 +61,37 @@
 .size{
     padding: 5px;
 }
+
+.count{
+    display: flex;
+    width:50%;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.count div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+}
+
+.count div span{
+    font-size: 20px;
+    padding: 5px;
+    width: 30px;
+    height: 30px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid teal;
+    margin: 0px 5px;
+}
+
+.count button{
+    padding: 15px;
+    border:2px solid teal;
+    cursor:pointer;
+    background-color: wheat;
+}
