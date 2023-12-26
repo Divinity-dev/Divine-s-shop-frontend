@@ -1,0 +1,121 @@
+.cart{
+    padding: 20px;
+}
+
+.cart h1{
+  font-weight: 300;
+  text-align: center;
+}
+
+.shopping{
+  display: flex;
+  justify-content: space-between;
+}
+
+.shopping div{
+  display: flex;
+  justify-content: center;
+  text-decoration: underline;
+}
+
+.shopping p{
+    margin-right: 20px;
+}
+
+.shopping button{
+      width: 15%;
+      padding: 10px;
+}
+
+.btn1{
+    border: 2px solid black;
+}
+
+.btn2{
+    border: none;
+    background-color: black;
+    color: white;
+}
+
+.info2{
+    display: flex;
+    margin-top: 20px;
+}
+
+.photo{
+    flex: 1;
+}
+
+.products{
+    flex: 2;
+}
+
+.detailschild{
+    flex: 3;
+}
+
+.num{
+    flex: 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.num span{
+    font-size: 30px;
+    margin-top: 20px;
+    text-align: center;
+    margin-right: 60px;
+}
+
+.products{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: left;
+}
+
+.products div{
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: black;
+}
+
+.details{
+    display: flex;
+}
+
+.summary{
+    flex: 1;
+    border: 1px solid rgb(194, 185, 185);
+    border-radius: 10px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.total{
+    font-size: 20px;
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    margin: 10px 0px;
+}
+
+.summarychild{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    margin: 10px 0px;
+}
+
+.summary button{
+    width: 100%;
+    background-color: black;
+    color: white;
+    padding: 10px;
+}

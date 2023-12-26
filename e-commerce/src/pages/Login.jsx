@@ -8,7 +8,7 @@ const Login = () => {
        <div className='registercontainer2'>
         <h1>SIGN IN</h1>
       <form action="" className='holder2'>
-        <div className='form'>
+        <div className='form1'>
         <input type="text"  placeholder=' username'/>
         <input type="text"  placeholder='password'/>
         </div>

@@ -40,9 +40,9 @@ const Singleproduct = () => {
         </div>
         <div className='count'>
           <div>
-          <ion-icon name="add-outline"></ion-icon>
-          <span>1</span>
           <ion-icon name="remove-outline"></ion-icon>
+          <span>1</span>
+          <ion-icon name="add-outline"></ion-icon>
           </div>
           <button>Add to cart</button>
         </div>
