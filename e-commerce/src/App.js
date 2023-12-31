@@ -1,26 +1,31 @@
-
+import React from 'react';
+import { Routes, Route, Navigate } from 'react-router-dom';
 import Home from './pages/Home';
-import Productlist from './pages/Productlist'
-import {Routes, Route} from 'react-router-dom'
-import Product from './pages/Product'
+import Productlist from './pages/Productlist';
+import Product from './pages/Product';
 import Register from './pages/Register';
 import Login from './pages/Login';
 import Cart from './pages/Cart';
 
 function App() {
+  const user = true; // Replace this with your authentication logic
+
   return (
-    <>
     <Routes>
-    <Route path="/" element={<Home />} />
-    <Route path="/Productlist" element={<Productlist />} />
-    <Route path="/Product" element={<Product />} />
-    <Route path="/Register" element={<Register />} />
-    <Route path="/Login" element={<Login />} />
-    <Route path="/Cart" element={<Cart />} />
+      <Route path="/" element={<Home />} />
+      <Route path="/Productlist" element={<Productlist />} />
+      <Route path="/Productlist/:category" element={<Productlist />} />
+      <Route path="/Product/:id" element={<Product />} />
+      <Route
+        path="/Register"
+        element={user ? <Navigate to="/" /> : <Register />}
+      />
+      <Route
+        path="/Login"
+        element={user ? <Navigate to="/" /> : <Login />}
+      />
+      <Route path="/Cart" element={<Cart />} />
     </Routes>
-   
-    
-    </>
   );
 }
 
