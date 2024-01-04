@@ -6,6 +6,8 @@ import axios from 'axios'
 const Singleproduct = () => {
   const [product, setproduct] = useState({})
   const [quantity, setquantity] = useState(1)
+  const [size, setsize] = useState(1)
+  const [color, setcolor] = useState(1)
   const location = useLocation()
   const id = location.pathname.split('/')[2]
   const handlequantity = (type)=>{
@@ -42,14 +44,14 @@ useEffect(()=>{
         <div className='color'>
   <span>Color</span>
   {product.color &&  product.color.map((c) => (
-    <div className='div' color={c} key={c} style={{ backgroundColor: c }}></div>
+    <div className='div' color={c} key={c} style={{ backgroundColor: c }} onClick={()=>{setcolor(c)}}></div>
   ))}
 </div>
 <div className='size'>
   <select name="" id="" className='size'>
     <option value="" disabled selected >Size</option>
     {product.size &&  product.size.map((s) => (
-      <option value={s} key={s}>{s}</option>
+      <option value={s} key={s} onChange={(e)=>{setsize(e.target.value)}}>{s}</option>
     ))}
   </select>
 </div>
