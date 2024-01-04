@@ -1,48 +1,64 @@
-import React from 'react'
+import { useLocation } from 'react-router'
 import './Singleproduct.css'
+import { useEffect, useState } from 'react'
+import axios from 'axios'
 
 const Singleproduct = () => {
+  const [product, setproduct] = useState({})
+  const [quantity, setquantity] = useState(1)
+  const location = useLocation()
+  const id = location.pathname.split('/')[2]
+  const handlequantity = (type)=>{
+    if(type === 'dec'){
+      quantity >1 && setquantity(quantity-1)
+    }else{
+      setquantity(quantity+1)
+    }
+    }
+useEffect(()=>{
+  const getProduct = async()=>{
+    try {
+      const res = await axios.get(`http://localhost:5000/api/products/find/${id}`)
+  setproduct(res.data)
+    } catch (error) {
+      console.log(error)
+    }
+  }
+  getProduct()
+},[id])
+
+
   return (
     <div className='single'>
       <div className='img'>
-         <img src="https://i.ibb.co/S6qMxwr/jean.jpg" alt="" />
+         <img src={product.Img} alt="" />
       </div>
       <div className='desc'>
         <div>
-             <h1>Jump suit</h1>
-         <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
-            Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
-             when an unknown printer took a galley of type and scrambled it to make a type specimen book. 
-             It has survived not only five centuries, but also the leap into electronic typesetting,
-              remaining essentially unchanged. It was popularised in the 1960s with the release of
-               Letraset sheets containing Lorem Ipsum passages, and more recently
-             with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
-         <span>Price: $200</span>
+             <h1>{product.Tittle}</h1>
+         <p>{product.Desc}</p>
+         <span>Price: ${product.Price}</span>
         </div>
-        <div className='select'>
-            <div className='color'>
-               <span>Color</span>
-               <div className='div div1'></div>
-               <div className='div div2'></div>
-               <div className='div div3'></div>
-            </div>
-            <div className='size'>
-            <select name="" id=""  className='size'>
-            <option value="" disabled selected >Size</option>
-            <option value="">XS</option>
-            <option value="">S</option>
-            <option value="">M</option>
-            <option value="">L</option>
-            <option value="">XL</option>
-            
-        </select>
-            </div>
-        </div>
+        <div className='color'>
+  <span>Color</span>
+  {product.color &&  product.color.map((c) => (
+    <div className='div' color={c} key={c} style={{ backgroundColor: c }}></div>
+  ))}
+</div>
+<div className='size'>
+  <select name="" id="" className='size'>
+    <option value="" disabled selected >Size</option>
+    {product.size &&  product.size.map((s) => (
+      <option value={s} key={s}>{s}</option>
+    ))}
+  </select>
+</div>
+
         <div className='count'>
           <div>
-          <ion-icon name="remove-outline"></ion-icon>
-          <span>1</span>
-          <ion-icon name="add-outline"></ion-icon>
+          <ion-icon name="remove-outline" onClick={()=>handlequantity('dec')}></ion-icon>
+          <span>{quantity}</span>
+          <ion-icon name="add-outline" onClick={()=>handlequantity('inc')}></ion-icon>
           </div>
           <button>Add to cart</button>
         </div>

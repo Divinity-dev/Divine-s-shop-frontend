@@ -26,7 +26,7 @@ const Productlist = () => {
       <Announcement />
       <Navbar />
       <div>
-      <h1>Dresses</h1>
+      <h1>{cat}</h1>
       <div className='filter'>
         <div className='filterchildren'>
            <span>Filtered Products:</span>
