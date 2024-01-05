@@ -2,6 +2,8 @@ import { useLocation } from 'react-router'
 import './Singleproduct.css'
 import { useEffect, useState } from 'react'
 import axios from 'axios'
+import { addProduct } from '../redux/cartSlice'
+import { useDispatch } from 'react-redux'
 
 const Singleproduct = () => {
   const [product, setproduct] = useState({})
@@ -28,8 +30,10 @@ useEffect(()=>{
   }
   getProduct()
 },[id])
-
-
+const dispatch =  useDispatch()
+const handleclick = ()=>{
+  dispatch(addProduct(product, quantity))
+}
   return (
     <div className='single'>
       <div className='img'>
@@ -62,7 +66,7 @@ useEffect(()=>{
           <span>{quantity}</span>
           <ion-icon name="add-outline" onClick={()=>handlequantity('inc')}></ion-icon>
           </div>
-          <button>Add to cart</button>
+          <button onClick={handleclick}>Add to cart</button>
         </div>
       </div>
     </div>
