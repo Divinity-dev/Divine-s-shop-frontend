@@ -1,11 +1,16 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import Announcement from '../components/Announcement'
 import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
 import '../components/Cart.css'
 import { useSelector } from 'react-redux'
+import StripeCheckout from 'react-stripe-checkout'
 
 const Cart = () => {
+  const [stripeToken, setstripeToken] = useState(null)
+  const ontoken = (token)=>{
+   console.log(token)
+  }
   const cart = useSelector(state=>state.cart)
  
   return (
@@ -68,7 +73,19 @@ const Cart = () => {
             <h2>Total</h2>
             <h2>${cart.total}</h2>
            </div>
+           <StripeCheckout
+            name='Divne's shop
+            image='https://as2.ftcdn.net/v2/jpg/01/06/24/39/1000_F_106243915_97MVJgRC25acsXIpGDwyAzMyNbgoUKoT.jpg'
+            billingAddress
+            shippingAddress
+            description={`your total is $${cart.total}`}
+            token={ontoken}
+            amount={cart.total*100}
+            stripeKey='pk_test_51NlyZwGdxUlG0jGDOpKyLXHOkkErks53CW2qFb2oW5zuWu6FnXP5K27uYwbV2cminQqTYQffBzqNy5s7ybO0qCK800DeATeO84'
+           >
            <button>Checkout now</button>
+           </StripeCheckout>
+           
         </div>
       </div>
       </div>
