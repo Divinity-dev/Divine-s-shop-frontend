@@ -32,7 +32,7 @@ useEffect(()=>{
 },[id])
 const dispatch =  useDispatch()
 const handleclick = ()=>{
-  dispatch(addProduct(product, quantity))
+  dispatch(addProduct({...product, color, size, quantity}))
 }
   return (
     <div className='single'>

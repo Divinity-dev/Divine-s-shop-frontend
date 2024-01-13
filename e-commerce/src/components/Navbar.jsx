@@ -1,6 +1,7 @@
 import React from 'react'
 import './Navbar.css'
 import { useSelector } from 'react-redux'
+import { Link } from 'react-router-dom'
 
 const Navbar = () => {
   const quantity = useSelector((state)=> state.cart.quantity)
@@ -20,7 +21,10 @@ const Navbar = () => {
            <div className='right'>
             <div className='menuItem'>register</div>
             <div className='menuItem'>sign in</div>
+            <Link to={'/Cart'}>
             <div className='menuItem'><ion-icon name="cart-outline"></ion-icon> <span className="badge">{quantity}</span></div>
+            </Link>
+            
            </div>
         </div>
       
