@@ -5,13 +5,35 @@ import Footer from '../components/Footer'
 import '../components/Cart.css'
 import { useSelector } from 'react-redux'
 import StripeCheckout from 'react-stripe-checkout'
+import axios from 'axios'
+import { useNavigate } from 'react-router-dom';
+import { userRequest } from '../request'
 
 const Cart = () => {
+  const navigate = useNavigate()
+  const cart = useSelector(state=>state.cart)
   const [stripeToken, setstripeToken] = useState(null)
   const ontoken = (token)=>{
-   console.log(token)
+   setstripeToken(token)
   }
-  const cart = useSelector(state=>state.cart)
+  useEffect(()=>{
+    const request = async ()=>{
+      try {
+       const res = await userRequest.post('/payment/checkout',{
+        tokenId: stripeToken.id,
+           amount: cart.total*100
+        })
+        console.log(res.data)
+        navigate('/success', {
+          stripeData: res.data,
+          products: cart, })
+      } catch (error) {
+        console.log(error)
+      }
+
+    };
+    stripeToken && cart.total >0 && request();
+  },[stripeToken, cart.total, navigate])
  
   return (
     <div>

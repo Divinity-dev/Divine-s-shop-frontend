@@ -6,6 +6,7 @@ import Product from './pages/Product';
 import Register from './pages/Register';
 import Login from './pages/Login';
 import Cart from './pages/Cart';
+import success from './pages/success';
 
 function App() {
   const user = true; // Replace this with your authentication logic
@@ -20,6 +21,7 @@ function App() {
         path="/Register"
         element={user ? <Navigate to="/" /> : <Register />}
       />
+      <Route path='/success' element={<success />} />
       <Route
         path="/Login"
         element={user ? <Navigate to="/" /> : <Login />}
