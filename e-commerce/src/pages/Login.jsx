@@ -6,6 +6,7 @@ import { loginStart, loginSuccess, loginfailure } from '../redux/userSlice'
 import { useDispatch } from 'react-redux'
 import axios from 'axios'
 
+
 const Login = () => {
   const [password, setpassword] = useState('')
   const [username, setusername] = useState('')
@@ -15,6 +16,7 @@ const Login = () => {
       dispatch(loginStart())
       try {
         const res = await axios.post("http://localhost:5000/api/auth/login", {username, password})
+        dispatch(loginSuccess(res.data))
       } catch (error) {
         dispatch(loginfailure())
       }

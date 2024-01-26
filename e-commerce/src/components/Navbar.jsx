@@ -2,9 +2,15 @@ import React from 'react'
 import './Navbar.css'
 import { useSelector } from 'react-redux'
 import { Link } from 'react-router-dom'
+import { logout } from '../redux/userSlice'
+import { useDispatch } from 'react-redux'
 
 const Navbar = () => {
   const quantity = useSelector((state)=> state.cart.quantity)
+  const dispatch = useDispatch()
+  const signOut = ()=>{
+     dispatch(logout())
+  }
   return (
     <div className='container1'>
         <div className='wrapper'>
@@ -24,7 +30,7 @@ const Navbar = () => {
             <Link to={'/Cart'}>
             <div className='menuItem'><ion-icon name="cart-outline"></ion-icon> <span className="badge">{quantity}</span></div>
             </Link>
-            
+            <div className='menuItem' onClick={signOut}>sign out</div>
            </div>
         </div>
       

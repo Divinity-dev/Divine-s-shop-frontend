@@ -5,7 +5,7 @@ import Newsletter from '../components/Newsletter'
 import Footer from '../components/Footer'
 import Singleproduct from '../components/Singleproduct'
 
-const Prroduct = () => {
+const Product = () => {
   return (
     <div>
       <Announcement />
@@ -17,4 +17,4 @@ const Prroduct = () => {
   )
 }
 
-export default Prroduct
+export default Product

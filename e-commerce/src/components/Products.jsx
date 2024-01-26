@@ -46,7 +46,6 @@ useEffect(() => {
   setfilteredproducts(filtered.slice(0, 8)); 
 }, [products, cat, filters, sort]);
 
-console.log(filteredproducts)
 
   return (
     <div className='item'>

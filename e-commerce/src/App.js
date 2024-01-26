@@ -6,12 +6,12 @@ import Product from './pages/Product';
 import Register from './pages/Register';
 import Login from './pages/Login';
 import Cart from './pages/Cart';
-import success from './pages/success';
+import Success from './pages/success';
 import { useSelector } from 'react-redux';
 
 function App() {
-  const currentUser = useSelector((state)=> state.user)
-  const user = currentUser; 
+  const user = useSelector((state)=> state.user.currentUser)
+  console.log(user)
 
   return (
     <Routes>
@@ -23,7 +23,7 @@ function App() {
         path="/Register"
         element={user ? <Navigate to="/" /> : <Register />}
       />
-      <Route path='/success' element={<success />} />
+      <Route path='/success' element={<Success />} />
       <Route
         path="/Login"
         element={user ? <Navigate to="/" /> : <Login />}

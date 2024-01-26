@@ -4,7 +4,7 @@ const userSlice = createSlice({
     name: 'user',
     initialState:{
         isfetching: false,
-        currentUser:[],
+        currentUser:null,
         isfailure: false,
     },
     reducers:{
@@ -20,7 +20,7 @@ const userSlice = createSlice({
         state.isfailure = true
     },
     logout :(state)=>{
-        state.currentUser = null
+        state.currentUser = null;
     }
     }
 })
