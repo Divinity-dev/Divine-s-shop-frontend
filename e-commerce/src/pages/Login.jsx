@@ -3,7 +3,7 @@ import './Login.css'
 import { Link } from 'react-router-dom'
 import { useState } from 'react'
 import { loginStart, loginSuccess, loginfailure } from '../redux/userSlice'
-import { useDispatch } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import axios from 'axios'
 
 
@@ -11,6 +11,7 @@ const Login = () => {
   const [password, setpassword] = useState('')
   const [username, setusername] = useState('')
   const dispatch = useDispatch();
+  const {isfetching, error} = useSelector(state=>state.user)
   const handlesumit = async(e)=>{
     e.preventDefault();
       dispatch(loginStart())
@@ -32,7 +33,8 @@ const Login = () => {
         <input type="text"  placeholder=' username' onChange={(e)=>setusername(e.target.value)}/>
         <input  placeholder='password' onChange={(e)=>setpassword(e.target.value)} type = "password"/>
         </div>
-        <button >sign in</button>
+        <button disabled={isfetching}>sign in</button>
+        <p>{error}</p>
         <Link to=''>Do not remember password?</Link>
         <Link to=''>Create account</Link>
       </form>

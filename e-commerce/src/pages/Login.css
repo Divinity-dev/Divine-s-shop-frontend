@@ -56,4 +56,8 @@
     color: white;
     cursor: pointer;
     width: 40%;
+    &:disabled{
+        color: green;
+        cursor: not-allowed;
+    }
 }
