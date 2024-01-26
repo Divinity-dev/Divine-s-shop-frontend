@@ -7,9 +7,11 @@ import Register from './pages/Register';
 import Login from './pages/Login';
 import Cart from './pages/Cart';
 import success from './pages/success';
+import { useSelector } from 'react-redux';
 
 function App() {
-  const user = true; // Replace this with your authentication logic
+  const currentUser = useSelector((state)=> state.user)
+  const user = currentUser; 
 
   return (
     <Routes>
