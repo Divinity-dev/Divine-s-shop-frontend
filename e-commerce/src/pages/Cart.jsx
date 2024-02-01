@@ -5,7 +5,6 @@ import Footer from '../components/Footer'
 import '../components/Cart.css'
 import { useSelector } from 'react-redux'
 import StripeCheckout from 'react-stripe-checkout'
-import axios from 'axios'
 import { useNavigate } from 'react-router-dom';
 import { userRequest } from '../request'
 
@@ -33,7 +32,7 @@ const Cart = () => {
 
     };
     stripeToken && cart.total >0 && request();
-  },[stripeToken, cart.total, navigate])
+  },[stripeToken, cart, navigate])
  
   return (
     <div>

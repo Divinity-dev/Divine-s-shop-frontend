@@ -3,9 +3,7 @@ import Announcement from '../components/Announcement'
 import Newsletter from '../components/Newsletter'
 import Footer from '../components/Footer'
 import Products from '../components/Products'
-import Filter from '../components/Filter'
-import { Form, useLocation } from 'react-router-dom';
-import {sort, filters} from '../components/Filter'
+import { useLocation } from 'react-router-dom';
 import '../components/Filter.css'
 import { useState } from 'react'
 
