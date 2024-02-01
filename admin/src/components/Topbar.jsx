@@ -17,6 +17,7 @@ const Topbar = () => {
         < SettingsApplications />
         <span className="badge">3</span>
         </div>
+        <img src="https://as2.ftcdn.net/v2/jpg/01/06/24/39/1000_F_106243915_97MVJgRC25acsXIpGDwyAzMyNbgoUKoT.jpg" alt="" className='avatar' />
       </div>
     </div>
   )
