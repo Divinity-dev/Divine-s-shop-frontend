@@ -4,6 +4,51 @@
  justify-content: space-between;
  align-items: center;
  padding: 10px;
+ position: sticky;
+ top: 0;
+ z-index: 999;
+}
+
+.maincomtainer{
+  display: flex;
+  padding: 10px;
+}
+
+.list{
+  list-style: none;
+}
+
+.sidebar{
+  flex: 1;
+  height: calc(100vh - 50px);
+  position: sticky;
+  top: 50px;
+  background-color: rgb(245, 245, 249);
+}
+
+.list li{
+  display: flex;
+  align-items: center;
+  text-align: left;
+  padding: 5px;
+  cursor: pointer;
+}
+
+.list.active li, .list li:hover{
+  background-color: rgb(225, 225, 244)
+}
+
+.listcontainer{
+  margin-bottom: 10px;
+}
+
+.listcontainer h3{
+  color: rgb(181, 176, 176);
+  font-size: 13px;
+}
+
+.center{
+  flex: 4;
 }
 
 .logo{
@@ -33,7 +78,6 @@
 
 .iconscontainer{
   display: flex;
-  justify-content: center;
   align-items: center;
 }
 
