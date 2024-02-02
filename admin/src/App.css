@@ -91,3 +91,56 @@
   margin-right: 5px;
   font-size: 20px !important;
 }
+
+.Infocontainer{
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  width: 100%;
+}
+
+.reports{
+  flex: 1;
+  cursor: pointer;
+  border-radius:10px ;
+  margin: 0px 10px;
+  padding: 20px;
+  box-shadow: -3px 4px 15px -4px rgba(0,0,0,0.57);
+  -webkit-box-shadow: -3px 4px 15px -4px rgba(0,0,0,0.57);
+  -moz-box-shadow: -3px 4px 15px -4px rgba(0,0,0,0.57);
+}
+
+.moneycontainer{
+  display: flex;
+  align-items: center;
+}
+
+.money{
+  font-weight: 600;
+  font-size: 20px;
+  margin-right: 20px;
+}
+
+.negetive{
+  color: red;
+  font-size: 14px !important;
+  margin-left: 5px;
+}
+
+.positive{
+  color: green;
+  font-size: 14px !important;
+  margin-left: 5px;
+}
+
+.month{
+  font-size: 15px;
+  color: gray;
+}
+
+.chart{
+  box-shadow: -3px 4px 15px -4px rgba(0,0,0,0.57);
+  -webkit-box-shadow: -3px 4px 15px -4px rgba(0,0,0,0.57);
+  -moz-box-shadow: -3px 4px 15px -4px rgba(0,0,0,0.57);
+  width: 100%;
+}
