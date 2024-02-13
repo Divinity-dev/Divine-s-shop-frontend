@@ -5,7 +5,7 @@ const Smallwg = () => {
   return (
     <div className='smwg'>
       <span className="members">Newly joined members</span>
-      <div className='memberproile'>
+      <div className='memberprofile'>
       <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSbfDDvvP-Ui1mHwsJP1F7QCKZDbs51d2oWVKBtVxWOUw&s" alt="" className="photo" />
       <div className='spans'>
       <span className="name">Tracy Asiriuwa</span>
@@ -16,7 +16,7 @@ const Smallwg = () => {
       Display
       </button>
       </div>
-      <div className='memberproile'>
+      <div className='memberprofile'>
       <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSbfDDvvP-Ui1mHwsJP1F7QCKZDbs51d2oWVKBtVxWOUw&s" alt="" className="photo" />
       <div className='spans'>
       <span className="name">Tracy Asiriuwa</span>
@@ -27,7 +27,7 @@ const Smallwg = () => {
       Display
       </button>
       </div>
-      <div className='memberproile'>
+      <div className='memberprofile'>
       <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSbfDDvvP-Ui1mHwsJP1F7QCKZDbs51d2oWVKBtVxWOUw&s" alt="" className="photo" />
       <div className='spans'>
       <span className="name">Tracy Asiriuwa</span>
@@ -38,7 +38,7 @@ const Smallwg = () => {
       Display
       </button>
       </div>
-      <div className='memberproile'>
+      <div className='memberprofile'>
       <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSbfDDvvP-Ui1mHwsJP1F7QCKZDbs51d2oWVKBtVxWOUw&s" alt="" className="photo" />
       <div className='spans'>
       <span className="name">Tracy Asiriuwa</span>
@@ -49,7 +49,7 @@ const Smallwg = () => {
       Display
       </button>
       </div>
-      <div className='memberproile'>
+      <div className='memberprofile'>
       <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSbfDDvvP-Ui1mHwsJP1F7QCKZDbs51d2oWVKBtVxWOUw&s" alt="" className="photo" />
       <div className='spans'>
       <span className="name">Tracy Asiriuwa</span>

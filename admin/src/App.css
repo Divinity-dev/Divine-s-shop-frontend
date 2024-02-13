@@ -176,13 +176,21 @@
   object-fit: cover;
 }
 
-.memberproile{
+.memberprofile{
   display: flex;
+  margin-bottom: 20px;
 }
 
 .members{
   font-size: 20px;
-  margin-bottom: 20px;
+  margin-bottom: 30px;
+}
+
+.customerImage{
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
 }
 
 .vis{
@@ -191,13 +199,13 @@
 }
 
 .name{
-  font-size: 12px;
+  font-size: 14px;
   margin-left: 10px;
   font-weight: 600;
 }
 
 .job{
-  font-size: 12px;
+  font-size: 14px;
   font-weight: 300;
 }
 
@@ -218,4 +226,51 @@
   flex-direction: column;
   flex: 3;
   text-align: center;
+}
+
+.wgbtn{
+  padding: 5px 7px;
+  font-size: 14px;
+  border: none;
+  border-radius: 10px;
+}
+
+.wgbtn.approved{
+  background-color: rgb(200, 214, 200);
+}
+
+.wgbtn.declined{
+background-color: rgb(239, 150, 150);
+}
+
+.wgbtn.pending{
+ background-color: rgb(237, 237, 170);
+}
+
+.table{
+  width: 100%;
+  border-spacing: 20px;
+}
+
+.tableheader{
+text-align: left;
+}
+
+.usercontainer{
+  display: flex;
+  align-items: center;
+}
+
+.user{
+  margin-left: 10px;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.column{
+  font-size: 14px;
+}
+
+.header{
+  margin: 0px ;
 }
