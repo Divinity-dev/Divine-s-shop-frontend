@@ -144,3 +144,25 @@
   -moz-box-shadow: -3px 4px 15px -4px rgba(0,0,0,0.57);
   width: 100%;
 }
+
+.homecomponents{
+  display: flex;
+  padding: 20px;
+}
+
+.smwg{
+  flex: 1;
+  box-shadow: -3px 4px 15px -4px rgba(0,0,0,0.57);
+  -webkit-box-shadow: -3px 4px 15px -4px rgba(0,0,0,0.57);
+  -moz-box-shadow: -3px 4px 15px -4px rgba(0,0,0,0.57);
+  margin-right: 20px;
+  padding: 20px;
+}
+
+.lgwg{
+  flex: 2;
+  box-shadow: -3px 4px 15px -4px rgba(0,0,0,0.57);
+  -webkit-box-shadow: -3px 4px 15px -4px rgba(0,0,0,0.57);
+  -moz-box-shadow: -3px 4px 15px -4px rgba(0,0,0,0.57);
+  padding: 20px;
+}
