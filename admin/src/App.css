@@ -157,6 +157,8 @@
   -moz-box-shadow: -3px 4px 15px -4px rgba(0,0,0,0.57);
   margin-right: 20px;
   padding: 20px;
+  display: flex;
+  flex-direction: column;
 }
 
 .lgwg{
@@ -165,4 +167,55 @@
   -webkit-box-shadow: -3px 4px 15px -4px rgba(0,0,0,0.57);
   -moz-box-shadow: -3px 4px 15px -4px rgba(0,0,0,0.57);
   padding: 20px;
+}
+
+.photo{
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.memberproile{
+  display: flex;
+}
+
+.members{
+  font-size: 20px;
+  margin-bottom: 20px;
+}
+
+.vis{
+  font-size: 16px !important;
+  margin-right: 5px;
+}
+
+.name{
+  font-size: 12px;
+  margin-left: 10px;
+  font-weight: 600;
+}
+
+.job{
+  font-size: 12px;
+  font-weight: 300;
+}
+
+.visibility{
+  display: flex;
+  font-size: 12px;
+  padding: 7px 10px;
+  border-radius: 10px;
+  border: none;
+  margin-bottom: 5px;
+  flex: 1;
+  align-items: center;
+  cursor: pointer;
+}
+
+.spans{
+  display: flex;
+  flex-direction: column;
+  flex: 3;
+  text-align: center;
 }
