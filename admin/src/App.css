@@ -287,3 +287,18 @@ text-align: left;
   object-fit: cover;
   margin-right: 10px;
 }
+
+.userlistEdit{
+  padding:5px 10px;
+  border-radius: 10px;
+  color: white;
+  border: none;
+  margin-right: 20px;
+  background-color: rgb(28, 238, 28);
+  cursor:pointer;
+}
+
+.userlistDelete{
+  color: red;
+  cursor: pointer;
+}

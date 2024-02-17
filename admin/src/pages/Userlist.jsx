@@ -1,5 +1,6 @@
 import React from 'react'
 import { DataGrid } from '@mui/x-data-grid';
+import {DeleteOutline} from '@mui/icons-material'
 
 const Userlist = () => {
     const columns = [
@@ -21,6 +22,12 @@ const Userlist = () => {
           headerName: 'Transaction',
           width: 90,
         },
+        { field: 'button', headerName: 'Button', width: 200, renderCell: (params)=>{
+          return (<div className='displaypicture'>
+                  <button className='userlistEdit'>Edit</button>
+                   <DeleteOutline className='userlistDelete'/>
+          </div>)
+        } },
       ];
       
       const rows = [
@@ -42,6 +49,7 @@ const Userlist = () => {
   return (
     <div style={{ height: 400, width: '100%' }}>
       <DataGrid
+      disableRowSelectionOnClick
         rows={rows}
         columns={columns}
         initialState={{
