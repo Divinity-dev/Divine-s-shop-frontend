@@ -1,8 +1,12 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { DataGrid } from '@mui/x-data-grid';
 import {DeleteOutline} from '@mui/icons-material'
+import {Link} from 'react-router-dom'
 
 const Userlist = () => {
+  const handclick = (id)=>{
+    setData(data.filter(item => item.id !== id))
+  }
     const columns = [
         { field: 'id', headerName: 'ID', width: 70 },
         { field: 'user', headerName: 'User', width: 200, renderCell: (params)=>{
@@ -11,21 +15,24 @@ const Userlist = () => {
                   {params.row.username}
           </div>)
         } },
-        { field: 'email', headerName: 'Email', width: 130 },
+        { field: 'email', headerName: 'Email', width: 200 },
         {
           field: 'status',
           headerName: 'Status',
-          width: 90,
+          width: 120,
         },
         {
           field: 'transaction',
           headerName: 'Transaction',
-          width: 90,
+          width: 120,
         },
-        { field: 'button', headerName: 'Button', width: 200, renderCell: (params)=>{
+        { field: 'Actions', headerName: 'Actions', width: 200, renderCell: (params)=>{
           return (<div className='displaypicture'>
-                  <button className='userlistEdit'>Edit</button>
-                   <DeleteOutline className='userlistDelete'/>
+            <Link to={'/user/' + params.row.id}>
+            <button className='userlistEdit'>Edit</button>
+            </Link>
+                  
+                   <DeleteOutline className='userlistDelete' onClick ={()=> handclick(params.row.id)}/>
           </div>)
         } },
       ];
@@ -45,12 +52,13 @@ const Userlist = () => {
       email:'divineaasiriuwa@gmail.com', status:'active', transaction:'$120' },
       
       ];
+      const [data, setData] = useState(rows)
       
   return (
     <div style={{ height: 400, width: '100%' }}>
       <DataGrid
       disableRowSelectionOnClick
-        rows={rows}
+        rows={data}
         columns={columns}
         initialState={{
           pagination: {
