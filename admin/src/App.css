@@ -302,3 +302,38 @@ text-align: left;
   color: red;
   cursor: pointer;
 }
+
+.userdetail{
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.create{
+  padding:5px 10px;
+  border-radius: 10px;
+  background-color: teal;
+  cursor: pointer;
+  border: none;
+}
+
+.editcreateform{
+  display: flex;
+  align-items: center;
+}
+
+.profiles{
+  flex: 1;
+  box-shadow: -3px 4px 15px -4px rgba(0,0,0,0.57);
+  -webkit-box-shadow: -3px 4px 15px -4px rgba(0,0,0,0.57);
+  -moz-box-shadow: -3px 4px 15px -4px rgba(0,0,0,0.57);
+  margin-right: 20px;
+}
+
+.createform{
+  flex: 3;
+  box-shadow: -3px 4px 15px -4px rgba(0,0,0,0.57);
+  -webkit-box-shadow: -3px 4px 15px -4px rgba(0,0,0,0.57);
+  -moz-box-shadow: -3px 4px 15px -4px rgba(0,0,0,0.57);
+}
