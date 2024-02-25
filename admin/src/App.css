@@ -304,18 +304,22 @@ text-align: left;
 }
 
 .userdetail{
-  padding: 20px;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
+.userdetailcontainer{
+  padding: 20px;
+}
+
 .create{
-  padding:5px 10px;
-  border-radius: 10px;
+  padding:5px 15px;
+  border-radius: 5px;
   background-color: teal;
   cursor: pointer;
   border: none;
+  color: white;
 }
 
 .editcreateform{
@@ -323,17 +327,89 @@ text-align: left;
   align-items: center;
 }
 
+.createform{
+  padding: 20px;
+}
+
 .profiles{
   flex: 1;
   box-shadow: -3px 4px 15px -4px rgba(0,0,0,0.57);
   -webkit-box-shadow: -3px 4px 15px -4px rgba(0,0,0,0.57);
   -moz-box-shadow: -3px 4px 15px -4px rgba(0,0,0,0.57);
+  padding: 20px;
   margin-right: 20px;
+  height: 65vh;
 }
+
+.createform h2{
+  font-weight: 600;
+  font-size: 20px;
+}
+
+.eidtusercontainer{
+  display: flex;
+}
+
+.usereditform{
+  display: flex;
+  flex-direction: column;
+}
+
 
 .createform{
   flex: 3;
   box-shadow: -3px 4px 15px -4px rgba(0,0,0,0.57);
   -webkit-box-shadow: -3px 4px 15px -4px rgba(0,0,0,0.57);
   -moz-box-shadow: -3px 4px 15px -4px rgba(0,0,0,0.57);
+}
+
+.userprofilepicture{
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-right: 10px;
+}
+
+.username{
+  font-weight: 600;
+}
+
+.usertitle{
+  font-weight: 300;
+}
+
+.nametitlecontainer{
+  display: flex;
+  flex-direction: column;
+}
+
+.photodetails{
+  display: flex;
+}
+.account{
+  font-size: 14px;
+  color: rgb(125, 116, 116);
+}
+
+.accountdetails{
+  display: flex;
+  align-items: center;
+  font-weight: 300;
+  margin-top: 10px;
+}
+
+.person{
+  font-size: 14px !important;
+  margin-right: 10px;
+}
+
+.usereditform label{
+  border-bottom: 10px;
+}
+
+.usereditform input{
+  border: none;
+  border-bottom: 1px solid  black;
+  margin-bottom: 20px;
 }
