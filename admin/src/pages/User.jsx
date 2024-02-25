@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import {Person, CalendarToday, PhoneAndroid, Mail, LocationSearching, Publish} from '@mui/icons-material'
 
 const User = () => {
@@ -6,7 +7,9 @@ const User = () => {
     <div className='userdetailcontainer'>
         <div className='userdetail'>
         <h1 className='title'>Edit user</h1>
-      <button className='create'>create</button>
+        <Link to='/newuser'>
+        <button className='create'>create</button>
+        </Link>
         </div>
       <div className='editcreateform'>
         <div className='profiles'>
