@@ -447,3 +447,61 @@ text-align: left;
   border-radius: 10px;
   border: none;
 }
+
+.newuser{
+  flex: 4;
+  padding: 20px;
+}
+
+.h1user{
+ font-weight: 800;
+ font-size: 30px;
+}
+
+.newuserform{
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.useritem{
+  width: 450px;
+  display: flex;
+  flex-direction: column;
+  margin-right: 20px;
+  margin-bottom: 20px;
+}
+
+.newuserform label{
+color: rgb(111, 104, 104);
+font-size: 15px;
+margin-bottom: 10px;
+}
+
+.newuserform input{
+  padding: 7px 10px;
+  border-radius: 5px;
+  border: 1px solid rgb(108, 105, 105);
+}
+
+
+.radio input{
+  margin-right: 10px;
+}
+
+.userbtn{
+  color: white;
+  background-color: darkblue;
+  cursor: pointer;
+  border-radius: 10px;
+  width: 50%;
+  margin-top: 20px;
+}
+
+.select{
+  padding: 7px 10px;
+}
+
+.link{
+  text-decoration: none;
+  color: inherit;
+}

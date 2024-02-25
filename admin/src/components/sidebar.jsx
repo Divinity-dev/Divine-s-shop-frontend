@@ -1,6 +1,7 @@
 import React from 'react'
 import {LineStyle, Timeline, TrendingUp, PersonOutline,Inventory2, AttachMoney,AssessmentOutlined, MailOutline, Forum, Chat, ManageAccounts} 
 from '@mui/icons-material'
+import {Link} from 'react-router-dom'
 
 const Sidebar = () => {
   return (
@@ -8,10 +9,13 @@ const Sidebar = () => {
       <div className='listcontainer'>
         <h3>Dashboard</h3>
         <ul className='list active'>
+          <Link to='/' className='link'>
           <li>
             <LineStyle className='indicators'/>
             Home
           </li>
+          </Link>
+          
         </ul>
         <ul className='list'>
           <li>
@@ -29,16 +33,22 @@ const Sidebar = () => {
       <div className='listcontainer'>
         <h3>Quickmenu</h3>
         <ul className='list'>
+          <Link to='/users' className='link'>
           <li>
             <PersonOutline className='indicators'/>
             Users
           </li>
+          </Link>
+          
         </ul>
         <ul className='list'>
+          <Link to='/products' className='link'>
           <li>
             <Inventory2 className='indicators'/>
            Products
           </li>
+          </Link>
+          
         </ul>
         <ul className='list'>
           <li>
