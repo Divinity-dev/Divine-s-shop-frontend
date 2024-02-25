@@ -307,6 +307,7 @@ text-align: left;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  margin: 0px;
 }
 
 .userdetailcontainer{
@@ -325,6 +326,7 @@ text-align: left;
 .editcreateform{
   display: flex;
   align-items: center;
+  flex: 1;
 }
 
 .createform{
@@ -338,7 +340,6 @@ text-align: left;
   -moz-box-shadow: -3px 4px 15px -4px rgba(0,0,0,0.57);
   padding: 20px;
   margin-right: 20px;
-  height: 65vh;
 }
 
 .createform h2{
@@ -346,8 +347,9 @@ text-align: left;
   font-size: 20px;
 }
 
-.eidtusercontainer{
+.editusercontainer{
   display: flex;
+  justify-content: space-between;
 }
 
 .usereditform{
@@ -357,7 +359,7 @@ text-align: left;
 
 
 .createform{
-  flex: 3;
+  flex: 2;
   box-shadow: -3px 4px 15px -4px rgba(0,0,0,0.57);
   -webkit-box-shadow: -3px 4px 15px -4px rgba(0,0,0,0.57);
   -moz-box-shadow: -3px 4px 15px -4px rgba(0,0,0,0.57);
@@ -396,7 +398,11 @@ text-align: left;
   display: flex;
   align-items: center;
   font-weight: 300;
-  margin-top: 10px;
+  margin-top: 20px;
+}
+
+.publish{
+  cursor: pointer;
 }
 
 .person{
@@ -411,5 +417,33 @@ text-align: left;
 .usereditform input{
   border: none;
   border-bottom: 1px solid  black;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
+}
+
+.uploadphoto{
+  width: 100px;
+  height: 100px;
+  border-radius: 10px;
+  object-fit: cover;
+  margin-right: 10px;
+}
+
+.photocontainer{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.edituserphoto{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.update{
+  color: white;
+  cursor: pointer;
+  background-color: blue;
+  border-radius: 10px;
+  border: none;
 }

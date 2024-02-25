@@ -1,5 +1,5 @@
 import React from 'react'
-import {Person, CalendarToday, PhoneAndroid, Mail, LocationSearching} from '@mui/icons-material'
+import {Person, CalendarToday, PhoneAndroid, Mail, LocationSearching, Publish} from '@mui/icons-material'
 
 const User = () => {
   return (
@@ -42,7 +42,7 @@ const User = () => {
         </div>
         <div className='createform'>
           <h2>Edit</h2>
-          <div className='eidtusercontainer'>
+          <div className='editusercontainer'>
             <div className='usereditinfo'>
               <form className='usereditform' >
                 <label >Username</label>
@@ -57,7 +57,18 @@ const User = () => {
                 <input type="text" placeholder='7 uwa street off ice road'/>
               </form>
             </div>
-            <div className='edituserphoto'></div>
+            <div className='edituserphoto'>
+              <div className='photocontainer'>
+              <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSbfDDvvP-Ui1mHwsJP1F7QCKZDbs51d2oWVKBtVxWOUw&s" 
+              alt="" className='uploadphoto' />
+              <label htmlFor="file">
+              <Publish className='publish'/>
+              </label>
+              <input type="file" id='file' style={{display: "none"}}/>
+               
+              </div>
+              <button className='update'>update</button>
+            </div>
           </div>
         </div>
       </div>
