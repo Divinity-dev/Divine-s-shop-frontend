@@ -505,3 +505,48 @@ margin-bottom: 10px;
   text-decoration: none;
   color: inherit;
 }
+
+.productchart{
+  display: flex;
+}
+
+.chart{
+  flex: 1;
+  margin-right: 20px;
+  box-shadow: -3px 4px 15px -4px rgba(0,0,0,0.57);
+  -webkit-box-shadow: -3px 4px 15px -4px rgba(0,0,0,0.57);
+  -moz-box-shadow: -3px 4px 15px -4px rgba(0,0,0,0.57);
+}
+
+.chartinfo{
+  flex: 1;
+  padding: 20px;
+  box-shadow: -3px 4px 15px -4px rgba(0,0,0,0.57);
+  -webkit-box-shadow: -3px 4px 15px -4px rgba(0,0,0,0.57);
+  -moz-box-shadow: -3px 4px 15px -4px rgba(0,0,0,0.57);
+}
+
+.chartinfotitlte{
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.chartinfophoto{
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-right: 10px;
+}
+
+.chartspan{
+  display: flex;
+  align-items: center;justify-content: space-between;
+  width: 30%;
+}
+
+.span2{
+  font-weight: 300;
+  
+}
