@@ -548,5 +548,33 @@ margin-bottom: 10px;
 
 .span2{
   font-weight: 300;
-  
+
+}
+
+.upload{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.uploadform{
+ display: flex;
+ flex-direction: column;
+}
+
+.uploadform label{
+  color: gray;
+  margin-bottom: 10px;
+}
+
+.uploadform input{
+  border: none;
+  border-bottom: 1px solid black;
+  margin-bottom: 10px;
+}
+
+.uploadselect{
+  padding: 5px 10px;
+  margin-bottom: 10px;
 }

@@ -2,6 +2,7 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import Chart from '../components/Chart'
 import { Productdata} from '../Graghdata'
+import {Publish} from '@mui/icons-material'
 
 const Product = () => {
   return (
@@ -39,8 +40,33 @@ const Product = () => {
   </div>
 </div>
 </div>
-<div>
-
+<div className='upload'>
+  <form className='uploadform'>
+    <label htmlFor="">Product name</label>
+    <input type="text" name="" id=""  placeholder='Gown'/>
+    <label htmlFor="">inStock</label>
+    <select name="" id="" className='uploadselect'>
+      <option value="yes">yes</option>
+      <option value="no">no</option>
+    </select>
+    <label htmlFor="">Active</label>
+    <select name="" id="" className='uploadselect'>
+      <option value="yes">yes</option>
+      <option value="no">no</option>
+    </select>
+  </form>
+<div className='edituserphoto'>
+              <div className='photocontainer'>
+              <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSbfDDvvP-Ui1mHwsJP1F7QCKZDbs51d2oWVKBtVxWOUw&s" 
+              alt="" className='uploadphoto' />
+              <label htmlFor="file">
+              <Publish className='publish'/>
+              </label>
+              <input type="file" id='file' style={{display: "none"}}/>
+               
+              </div>
+              <button className='update'>update</button>
+            </div>
 </div>
 
     </div>
