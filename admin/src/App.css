@@ -578,3 +578,23 @@ margin-bottom: 10px;
   padding: 5px 10px;
   margin-bottom: 10px;
 }
+
+.newproduct{
+  padding: 20px;
+}
+
+.newproductform{
+  display: flex;
+  flex-direction: column;
+  width: 20%;
+}
+
+.newproductform label{
+  color: gray;
+  margin-bottom: 10px;
+}
+
+.newproductforminput{
+  padding: 5px 10px;
+  margin-bottom: 10px;
+}
