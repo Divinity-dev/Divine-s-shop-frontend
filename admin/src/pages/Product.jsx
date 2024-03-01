@@ -9,7 +9,7 @@ const Product = () => {
     <div className='userdetailcontainer'>
       <div className='userdetail'>
         <h1 className='title'>Product</h1>
-        <Link to='/newuser'>
+        <Link to='/newproduct'>
         <button className='create'>create</button>
         </Link>
         </div>

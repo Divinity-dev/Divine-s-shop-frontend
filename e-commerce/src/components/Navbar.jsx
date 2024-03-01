@@ -1,15 +1,17 @@
 import React from 'react'
 import './Navbar.css'
 import { useSelector } from 'react-redux'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import { logout } from '../redux/userSlice'
 import { useDispatch } from 'react-redux'
 
 const Navbar = () => {
   const quantity = useSelector((state)=> state.cart.quantity)
   const dispatch = useDispatch()
+  const navigate = useNavigate()
   const signOut = ()=>{
      dispatch(logout())
+     navigate('/login')
   }
   return (
     <div className='container1'>
