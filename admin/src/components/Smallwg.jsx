@@ -1,7 +1,35 @@
 import React from 'react'
 import {Visibility} from '@mui/icons-material'
+import { useState } from 'react'
+import { useEffect } from 'react'
+import Axios from 'axios'
+import {useSelector} from 'react-redux'
 
 const Smallwg = () => {
+  const [users, setUsers] = useState([])
+  const user = useSelector((state) => state.user);
+
+
+  useEffect(()=>{
+    const getUsers = async ()=>{
+        try {
+          const authToken = user.currentUser?.accessToken
+          
+      const config = {
+        headers: {
+          Authorization: `Bearer ${authToken}` 
+        }
+      }
+          const res = await Axios.get("http://localhost:5000/api/user/?new=true",config)
+          setUsers(res.data)
+        } catch (error) {
+          
+        }
+       
+    }
+    getUsers()
+  },[])
+  console.log(users)
   return (
     <div className='smwg'>
       <span className="members">Newly joined members</span>

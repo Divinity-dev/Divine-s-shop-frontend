@@ -5,7 +5,9 @@ import {data} from '../Graghdata'
 import Smallwg from '../components/Smallwg'
 import Largewg from '../components/Largewg'
 
+
 const Home = () => {
+  
   return (
     <div>
       <Info/>

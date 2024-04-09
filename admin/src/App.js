@@ -13,8 +13,8 @@ import Login from "./pages/Login";
 import { useSelector } from "react-redux";
 
 function App() {
-  const user = useSelector(state => state.user.currentUser);
-  console.log(user)
+  const user = useSelector((state)=> state.user.currentUser?.isAdmin)
+  
   return (
     <div className="App">
       
