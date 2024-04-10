@@ -22,7 +22,7 @@ const Login = () => {
     e.preventDefault();
       dispatch(loginStart())
       try {
-        const res = await axios.post("http://localhost:5000/api/auth/login", {username, password, config})
+        const res = await axios.post("http://localhost:5000/api/auth/login", {username, password}, config)
         dispatch(loginSuccess(res.data))
       } catch (error) {
         dispatch(loginfailure())
