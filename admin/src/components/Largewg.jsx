@@ -1,6 +1,7 @@
 import  Axios  from 'axios';
 import React, { useEffect, useState } from 'react'
 import {useSelector} from 'react-redux'
+import {format} from 'timeago.js'
 
 const Largewg = () => {
 const Button = ({type})=>{
@@ -46,74 +47,29 @@ useEffect(()=>{
              status
           </th>
         </tr>
-        <tr className='customerdetails'>
-          <td className='column'>
-            <div className='usercontainer'>
-            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSbfDDvvP-Ui1mHwsJP1F7QCKZDbs51d2oWVKBtVxWOUw&s" alt="" className='customerImage' />
-            <h3 className='user'> Tracy Asiriuwa</h3>
-            </div> 
-          </td>
-          <td className='column'>
-            13/02/2024
-          </td>
-          <td className='column'>
-            $500
-          </td>
-          <td className='column'>
-           <Button type='declined'/>
-          </td>
-        </tr>
-        <tr className='customerdetails'>
-          <td className='column'>
-          <div className='usercontainer'>
-            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSbfDDvvP-Ui1mHwsJP1F7QCKZDbs51d2oWVKBtVxWOUw&s" alt="" className='customerImage' />
-            <h3 className='user'> Tracy Asiriuwa</h3>
-            </div> 
-          </td>
-          <td className='column'>
-            13/02/2024
-          </td>
-          <td className='column'>
-            $500
-          </td>
-          <td className='column'>
-           <Button type='approved'/>
-          </td>
-        </tr>
-        <tr className='customerdetails'>
-          <td className='column'>
-          <div className='usercontainer'>
-            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSbfDDvvP-Ui1mHwsJP1F7QCKZDbs51d2oWVKBtVxWOUw&s" alt="" className='customerImage' />
-            <h3 className='user'> Tracy Asiriuwa</h3>
-            </div> 
-          </td>
-          <td className='column'>
-            13/02/2024
-          </td>
-          <td className='column'>
-            $500
-          </td>
-          <td className='column'>
-           <Button type='pending'/>
-          </td>
-        </tr>
-        <tr className='customerdetails'>
-          <td className='column'>
-          <div className='usercontainer'>
-            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSbfDDvvP-Ui1mHwsJP1F7QCKZDbs51d2oWVKBtVxWOUw&s" alt="" className='customerImage' />
-            <h3 className='user'> Tracy Asiriuwa</h3>
-            </div> 
-          </td>
-          <td className='column'>
-            13/02/2024
-          </td>
-          <td className='column'>
-            $500
-          </td>
-          <td className='column'>
-           <Button type='approved'/>
-          </td>
-        </tr>
+        {
+          orders.map(order=>(
+            <tr className='customerdetails' key={order._id}>
+            <td className='column'>
+              <div className='usercontainer'>
+              
+              <h3 className='user'> {order.UserId}</h3>
+              </div> 
+            </td>
+            <td className='column'>
+              {format(order.createdAt)}
+            </td>
+            <td className='column'>
+              ${order.amount}
+            </td>
+            <td className='column'>
+             <Button type={order.status}/>
+            </td>
+          </tr>
+          ))
+        }
+        
+        
       </table>
     </div>
   )
