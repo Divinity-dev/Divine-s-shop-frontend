@@ -1,10 +1,32 @@
-import React from 'react'
+import  Axios  from 'axios';
+import React, { useEffect, useState } from 'react'
+import {useSelector} from 'react-redux'
 
 const Largewg = () => {
 const Button = ({type})=>{
 return <button className={"wgbtn " + type}>{type}</button>
 }
-
+const user = useSelector(state=>state.user)
+const [orders, setorders] = useState([]);
+useEffect(()=>{
+ const getOrders = async()=>{
+  try {
+    const authToken = user.currentUser?.acessToken
+         
+      const config = {
+        headers: {
+          Authorization: `Bearer ${authToken}` 
+        },
+      }
+    const res = await Axios.get('http://localhost:5000/api/Order', config)
+    setorders(res.data)
+  } catch (error) {
+    
+  }
+  
+ }
+ getOrders()
+})
 
   return (
     <div className='lgwg'>
