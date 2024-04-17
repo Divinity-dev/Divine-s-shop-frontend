@@ -1,7 +1,10 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { DataGrid } from '@mui/x-data-grid';
 import {DeleteOutline} from '@mui/icons-material'
 import {Link} from 'react-router-dom'
+import  Axios  from 'axios';
+import { useSelector } from 'react-redux';
+
 
 const Productlist = () => {
   const handclick = (id)=>{
@@ -9,21 +12,17 @@ const Productlist = () => {
   }
 
   const columns = [
-    { field: 'id', headerName: 'ID', width: 70 },
+    { field: '_id', headerName: 'ID', width: 220 },
     { field: 'product', headerName: 'Product', width: 200, renderCell: (params)=>{
       return (<div className='displaypicture'>
               <img src={params.row.Img} alt=""  className='displayimage'/>
-              {params.row.productname}
+              {params.row.Tittle}
       </div>)
     } },
-    { field: 'stock', headerName: 'Stock', width: 200 },
+    { field: 'inStock', headerName: 'Stock', width: 200 },
+    
     {
-      field: 'status',
-      headerName: 'Status',
-      width: 120,
-    },
-    {
-      field: 'price',
+      field: 'Price',
       headerName: 'Price',
       width: 120,
     },
@@ -55,12 +54,34 @@ const rows = [
   
   ];
   const [data, setData] = useState(rows)
+  const [product, setProduct] = useState({})
+  const user = useSelector(state=>state.user)
+  useEffect(()=>{
+    const getProducts = async ()=>{
+      try {
+        const authToken = user.currentUser?.acessToken
+         
+      const config = {
+        headers: {
+          Authorization: `Bearer ${authToken}` 
+        },
+      }
+      const res = await Axios.get('http://localhost:5000/api/products', config)
+        setProduct(res.data)
+      } catch (error) {
+        console.error('Error fetching products:', error);
+      }
+    }
+    getProducts()
+  },[])
+  
 return (
 <div style={{ height: 400, width: '100%' }}>
   <DataGrid
   disableRowSelectionOnClick
-    rows={data}
+    rows={product}
     columns={columns}
+    getRowId={row=>row._id}
     initialState={{
       pagination: {
         paginationModel: { page: 0, pageSize: 5 },

@@ -29,7 +29,6 @@ useEffect(()=>{
  }
  getincome()
 },[])
-console.log(percentage)
   return (
     <div  className='Infocontainer'>
         <div className='reports'>

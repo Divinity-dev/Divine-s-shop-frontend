@@ -3,22 +3,29 @@ import { configureStore } from '@reduxjs/toolkit';
 import { persistStore, persistReducer } from 'redux-persist';
 import storage from 'redux-persist/lib/storage'; // defaults to localStorage
 import userReducer from '../redux/userSlice';
-
-
+import productReducer from '../redux/ProductSlice';
 
 const userPersistConfig = {
   key: 'user',
   storage,
-  // Additional configuration options if needed
+};
+
+const productPersistConfig = {
+  key: 'product',
+  storage,
+  serialize: false, 
+  deserialize: false,
 };
 
 const persistedUserReducer = persistReducer(userPersistConfig, userReducer);
+const persistedProductReducer = persistReducer(productPersistConfig, productReducer);
 
 export const store = configureStore({
   reducer: {
     user: persistedUserReducer,
+    product: persistedProductReducer, 
   },
-  // Any other store configurations you might have
+
 });
 
 export const persistor = persistStore(store);
