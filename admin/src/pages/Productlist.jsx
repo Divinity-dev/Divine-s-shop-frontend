@@ -32,7 +32,7 @@ const Productlist = () => {
         <button className='userlistEdit'>Edit</button>
         </Link>
               
-               <DeleteOutline className='userlistDelete' onClick ={()=> handclick(params.row.id)}/>
+               <DeleteOutline className='userlistDelete' onClick ={()=> handleDelete(params.row._id)}/>
       </div>)
     } },
   ];
@@ -66,6 +66,7 @@ const rows = [
           Authorization: `Bearer ${authToken}` 
         },
       }
+     
       const res = await Axios.get('http://localhost:5000/api/products', config)
         setProduct(res.data)
       } catch (error) {
@@ -74,6 +75,22 @@ const rows = [
     }
     getProducts()
   },[])
+  const handleDelete = async (id) => {
+    try {
+      const authToken = user.currentUser?.acessToken
+         
+      const config = {
+        headers: {
+          Authorization: `Bearer ${authToken}` 
+        },
+      }
+      await Axios.delete(`http://localhost:5000/api/products/${id}`, config);
+      // Filter out the deleted product from the data
+      setProduct(product.filter((item) => item._id !== id));
+    } catch (error) {
+      console.error('Error deleting product:', error);
+    }
+  };
   
 return (
 <div style={{ height: 400, width: '100%' }}>
