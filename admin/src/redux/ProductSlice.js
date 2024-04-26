@@ -4,8 +4,8 @@ export const productslice = createSlice(
     {
         name: "product",
         initialState:{
-            products:[],
             isfetching: false,
+            products:[],
             error:false,
         },
         reducers:{
@@ -13,7 +13,7 @@ export const productslice = createSlice(
             state.isfetching=true;
             state.error = false
            },
-           getProductScuccess:(state, action)=>{
+           getProductSuccess:(state, action)=>{
             state.isfetching=false;
             state.products = action.payload
            },
@@ -25,5 +25,5 @@ export const productslice = createSlice(
     }
 )
 
-export const {getProductStart, getProductScuccess,  getProductfailure }= productslice.actions
+export const {getProductStart, getProductSuccess,  getProductfailure }= productslice.actions
 export default productslice.reducer

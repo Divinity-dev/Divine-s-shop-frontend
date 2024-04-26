@@ -13,8 +13,7 @@ const userPersistConfig = {
 const productPersistConfig = {
   key: 'product',
   storage,
-  serialize: false, 
-  deserialize: false,
+  
 };
 
 const persistedUserReducer = persistReducer(userPersistConfig, userReducer);
