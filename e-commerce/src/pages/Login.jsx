@@ -45,7 +45,7 @@ const Login = () => {
         <button disabled={isfetching}>sign in</button>
         <p>{error}</p>
         <Link to=''>Do not remember password?</Link>
-        <Link to=''>Create account</Link>
+        <Link to='/register'>Create account</Link>
       </form>
     </div>
     </div>

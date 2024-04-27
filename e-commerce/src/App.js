@@ -19,7 +19,7 @@ function App() {
       <Route path="/Productlist/:category" element={<Productlist />} />
       <Route path="/Product/:id" element={<Product />} />
       <Route
-        path="/Register"
+        path="/register"
         element={user ? <Navigate to="/" /> : <Register />}
       />
       <Route path='/success' element={<Success />} />

@@ -59,7 +59,7 @@ const update = async (e)=>{
           Authorization: `Bearer ${authToken}` 
         },
       }
-      const res = await Axios.put(`http://localhost:5000/api/user/${id.userID}`,{...input, file}, config)
+      const res = await Axios.put(`http://localhost:5000/api/user/${id.userID}`,{...input, Img:file}, config)
        console.log(res.data)
   } catch (error) {
     console.log(error)
@@ -126,7 +126,7 @@ const update = async (e)=>{
             </div>
             <div className='edituserphoto'>
               <div className='photocontainer'>
-              <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSbfDDvvP-Ui1mHwsJP1F7QCKZDbs51d2oWVKBtVxWOUw&s" 
+              <img src={person.Img} 
               alt="" className='uploadphoto' />
               <label htmlFor="file">
               <Publish className='publish'/>
