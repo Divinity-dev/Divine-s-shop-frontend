@@ -36,7 +36,7 @@ const Userlist = () => {
           Authorization: `Bearer ${authToken}` 
         },
       }
-      const res = await Axios.delete(`http://localhost:5000/api/user/${id}`, config)
+       await Axios.delete(`http://localhost:5000/api/user/${id}`, config)
       setUsers(users.filter((user)=>user._id !== id))
       
     } catch (error) {

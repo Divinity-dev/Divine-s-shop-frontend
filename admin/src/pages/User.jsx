@@ -1,8 +1,71 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
+import React, { useEffect, useState } from 'react'
+import { Link, useParams } from 'react-router-dom'
 import {Person, CalendarToday, PhoneAndroid, Mail, LocationSearching, Publish} from '@mui/icons-material'
+import { useSelector } from 'react-redux'
+import  Axios  from 'axios'
+import {format} from 'timeago.js'
+
 
 const User = () => {
+const [person, setPerson] = useState({})
+const [input, setInput] = useState({})
+const [file, setfile] = useState('')
+const id = useParams()
+const user = useSelector(state=>state.user)
+useEffect(()=>{
+  const getPerson = async ()=>{
+     try {
+      const authToken = user.currentUser?.acessToken
+             
+      const config = {
+        headers: {
+          Authorization: `Bearer ${authToken}` 
+        },
+      }
+      const res = await Axios.get(`http://localhost:5000/api/user/find/${id.userID}`, config)
+      setPerson(res.data)
+     } catch (error) {
+      console.log(error)
+     }
+  }
+  getPerson()
+},[user.currentUser.acessToken, id.userID])
+
+const handlechange = (e)=>{
+  setInput({
+    ...input,
+    [e.target.name]:e.target.value
+})
+}
+
+const handleImage = (e)=>{
+  const file = e.target.files[0];
+  const reader = new FileReader();
+  reader.onload = () => {
+    const dataURL = reader.result; 
+    setfile(dataURL);    
+  };
+  reader.readAsDataURL(file);
+}
+
+
+const update = async (e)=>{
+  e.preventDefault()
+  try {
+    const authToken = user.currentUser?.acessToken
+             
+      const config = {
+        headers: {
+          Authorization: `Bearer ${authToken}` 
+        },
+      }
+      const res = await Axios.put(`http://localhost:5000/api/user/${id.userID}`,{...input, file}, config)
+       console.log(res.data)
+  } catch (error) {
+    console.log(error)
+  }
+}
+
   return (
     <div className='userdetailcontainer'>
         <div className='userdetail'>
@@ -14,20 +77,20 @@ const User = () => {
       <div className='editcreateform'>
         <div className='profiles'>
             <div className='photodetails'>
-            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSbfDDvvP-Ui1mHwsJP1F7QCKZDbs51d2oWVKBtVxWOUw&s" alt="" className='userprofilepicture'/>
+            <img src={person.Img} alt="" className='userprofilepicture'/>
             <div className='nametitlecontainer'>
-                <span className="username">Tracy Asiriuwa</span>
+                <span className="username">{person.username}</span>
                 <span className="usertitle">Software engineer</span>
             </div>
             </div>
             <h4 className='account'>Account details</h4>
             <div className='accountdetails'>
                 <Person className='person'/>
-                <span>tracyasiriuwa20</span>
+                <span>{person.email}</span>
             </div>
             <div className='accountdetails'>
                 <CalendarToday className='person'/>
-                <span>11.08.1993</span>
+                <span>{format(person.createdAt)}</span>
             </div>
             <h4 className='account'>contact details</h4>
             <div className='accountdetails'>
@@ -49,13 +112,14 @@ const User = () => {
             <div className='usereditinfo'>
               <form className='usereditform' >
                 <label >Username</label>
-                <input type="text" placeholder='tracyasiriuwa20'/>
-                <label >Full name</label>
-                <input type="text" placeholder='Tracy Asiriuwa' />
+                <input name='username' type="text" placeholder='tracyasiriuwa20' onChange={handlechange}/>
+            
                 <label >Phone </label>
                 <input type="text" placeholder='+2348069715964' />
                 <label >Email</label>
-                <input type="text" placeholder='tracy@yahoo.com' />
+                <input name='email' type="text" placeholder='tracy@yahoo.com'onChange={handlechange} />
+                <label >Password</label>
+                <input name='password' type="text" placeholder='tracy@yahoo.com'onChange={handlechange} />
                 <label >Adress</label>
                 <input type="text" placeholder='7 uwa street off ice road'/>
               </form>
@@ -67,10 +131,10 @@ const User = () => {
               <label htmlFor="file">
               <Publish className='publish'/>
               </label>
-              <input type="file" id='file' style={{display: "none"}}/>
+              <input type="file" id='file' style={{display: "none"}} onChange={handleImage}/>
                
               </div>
-              <button className='update'>update</button>
+              <button onClick={update} className='update'>update</button>
             </div>
           </div>
         </div>
