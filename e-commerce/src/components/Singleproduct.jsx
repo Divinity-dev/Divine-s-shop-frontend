@@ -4,6 +4,7 @@ import { useEffect, useState } from 'react'
 import axios from 'axios'
 import { addProduct } from '../redux/cartSlice'
 import { useDispatch } from 'react-redux'
+import { useSelector } from 'react-redux'
 
 const Singleproduct = () => {
   const [product, setproduct] = useState({})
@@ -12,6 +13,8 @@ const Singleproduct = () => {
   const [color, setcolor] = useState(1)
   const location = useLocation()
   const id = location.pathname.split('/')[2]
+  const user = useSelector(state=>state.user)
+  console.log(user.currentUser.acessToken)
   const handlequantity = (type)=>{
     if(type === 'dec'){
       quantity >1 && setquantity(quantity-1)
@@ -30,9 +33,18 @@ useEffect(()=>{
   }
   getProduct()
 },[id])
+const authToken = user.currentUser?.acessToken
+  
+const config = {
+ headers: {
+   'Authorization': `Bearer ${authToken}`
+ }
+};
 const dispatch =  useDispatch()
-const handleclick = ()=>{
+const handleclick = async ()=>{
   dispatch(addProduct({...product, color, size, quantity}))
+   const res = await axios.post('http://localhost:5000/api/cart', { UserId:user.currentUser._id,Products:[{ ProductId: id, quantity: quantity }]}, config)
+   console.log(res.data)
 }
   return (
     <div className='single'>
