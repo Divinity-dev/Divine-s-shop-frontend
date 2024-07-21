@@ -27,8 +27,12 @@ const Navbar = () => {
            <h1 className='shop'>Divine's shop</h1>
            </div>
            <div className='right'>
+            <Link to={"/register"}>
             <div className='menuItem'>register</div>
+            </Link>
+            <Link to={"/login"}>
             <div className='menuItem'>sign in</div>
+            </Link>
             <Link to={'/Cart'}>
             <div className='menuItem'><ion-icon name="cart-outline"></ion-icon> <span className="badge">{quantity}</span></div>
             </Link>
